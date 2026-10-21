@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>qbx_radialmenu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="backdrop"></div>
+    <div id="radial" hidden>
+        <svg id="ring" viewBox="0 0 600 600" aria-hidden="true">
+            <defs>
+                <linearGradient id="segFill" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#2b2b2b" />
+                    <stop offset="1" stop-color="#121212" />
+                </linearGradient>
+                <radialGradient id="hubFill" cx="0.4" cy="0.35" r="0.8">
+                    <stop offset="0" stop-color="#2a2a2a" />
+                    <stop offset="1" stop-color="#0d0d0d" />
+                </radialGradient>
+                <filter id="segShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.55" />
+                </filter>
+            </defs>
+            <circle class="ring-bg" cx="300" cy="300" r="262" />
+            <g id="segments"></g>
+            <circle class="hub" cx="300" cy="300" r="92" />
+            <circle class="hub-ring" cx="300" cy="300" r="100" />
+        </svg>
+        <div id="labels"></div>
+        <div id="center">
+            <span class="c-icon"><i class="fa-solid fa-circle-dot"></i></span>
+            <b class="c-title">Menu</b>
+            <span class="c-sub"></span>
+        </div>
+        <div id="pages"></div>
+    </div>
+    <div id="hints" hidden></div>
+    <script src="app.js"></script>
+</body>
+</html>
